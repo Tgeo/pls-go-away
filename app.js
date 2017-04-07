@@ -1,15 +1,20 @@
-const app = angular.module('plsGoAway', [
-    'ngNewRouter',
-    'plsGoAway.home',
-    'plsGoAway.goAway']);
+const app = angular.module('plsGoAway', ['ui.router']);
 
-app.config(['$locationProvider', function ($locationProvider) {
+app.config(configFn);
+
+configFn.$inject = ['$locationProvider', '$stateProvider'];
+
+function configFn($locationProvider, $stateProvider) {
     $locationProvider.html5Mode(true);
-}]);
 
-app.controller('AppController', ['$router', function AppController ($router) {
-    $router.config([
-        { path: '/', component: 'home' },
-        { path: '/:name', component: 'goAway' }
-    ]);
-}]);
+    $stateProvider.state({
+        name: 'home',
+        url: '/',
+        template: '<home></home>'
+    });
+    $stateProvider.state({
+        name: 'goAway',
+        url: '/:name',
+        template: '<go-away></go-away>'
+    });
+}
