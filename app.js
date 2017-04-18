@@ -2,11 +2,11 @@ const app = angular.module('plsGoAway', ['ui.router']);
 
 app.config(configFn);
 
-configFn.$inject = ['$locationProvider', '$stateProvider'];
+configFn.$inject = ['$urlRouterProvider', '$stateProvider'];
 
-function configFn($locationProvider, $stateProvider) {
-    //$locationProvider.html5Mode(true);
-
+function configFn($urlRouterProvider, $stateProvider) {
+    $locationProvider.html5Mode(true);
+    
     $stateProvider.state({
         name: 'home',
         url: '/',
@@ -17,4 +17,5 @@ function configFn($locationProvider, $stateProvider) {
         url: '/:name',
         template: '<go-away></go-away>'
     });
+    $urlRouterProvider.otherwise('/');
 }
