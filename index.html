@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <title>Please Go Away</title>
-    <base href="/">
+    <!--<base href="/">-->
     <meta charset="utf-8">
     <link rel="stylesheet" 
           href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -13,8 +13,10 @@
 <body ng-app="plsGoAway">
     <div class="container" ui-view></div>
 
-    <script src="/node_modules/angular/angular.js"></script>
-    <script src="/node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://unpkg.com/angular-ui-router@0.4.2/release/angular-ui-router.min.js"></script>
+    <!--<script src="/node_modules/angular/angular.js"></script>-->
+    <!--<script src="/node_modules/angular-ui-router/release/angular-ui-router.js"></script>-->
     <script src="/app.js"></script>
     <script src="/components/home/home.js"></script>
     <script src="/components/go-away/go-away.js"></script>

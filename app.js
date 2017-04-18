@@ -5,7 +5,7 @@ app.config(configFn);
 configFn.$inject = ['$locationProvider', '$stateProvider'];
 
 function configFn($locationProvider, $stateProvider) {
-    $locationProvider.html5Mode(true);
+    //$locationProvider.html5Mode(true);
 
     $stateProvider.state({
         name: 'home',
