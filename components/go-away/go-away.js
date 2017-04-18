@@ -3,16 +3,33 @@ angular.module('plsGoAway').component('goAway', {
         controller: GoAwayCtrl
     });
 
-GoAwayCtrl.$inject = ['$stateParams'];
+GoAwayCtrl.$inject = [
+    '$stateParams',
+    '$interval'
+];
 
-function GoAwayCtrl($stateParams) {
-    let that = this;
+function GoAwayCtrl($stateParams, $interval) {
+    let self = this;
+    self.ctr = 0;
 
-    that.$onInit = function() {
-        that.name = that.formatName($stateParams.name);
+    self.$onInit = function() {
+        self.name = self.formatName($stateParams.name);
+        $interval(function() {
+            self.ctr++;
+            if (!self.goText && self.ctr > 13) {
+                self.startGoAway();
+            }
+        }, 1000);
     }
 
-    that.formatName = function(name) {
+    self.startGoAway = function() {
+        self.goText = 'G';
+        $interval(function() {
+            self.goText = self.goText + 'o';
+        }, 50);
+    }
+
+    self.formatName = function(name) {
         if (!name || name.length === 0) return 'you';
         return name[0].toUpperCase() + name.slice(1);
     }

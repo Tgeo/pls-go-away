@@ -1,1 +1,9 @@
-<h1>Go away, {{ $ctrl.name }}!</h1>
+<h1>Please go away, {{ $ctrl.name }}</h1>
+<p>
+    <span ng-if="$ctrl.ctr > 0">Seriously, just go...</span>
+    <span ng-if="$ctrl.ctr > 1"><b>{{ $ctrl.ctr - 1 }}</b></span>
+</p>
+<p ng-if="$ctrl.ctr > 4">Why are you still here?</p>
+<p ng-if="$ctrl.ctr > 7"><b>I'm trying to work!</b></p>
+<p ng-if="$ctrl.ctr > 10"><em>LEAVE!</em></p>
+<p ng-if="$ctrl.goText">{{ $ctrl.goText }}</p>
