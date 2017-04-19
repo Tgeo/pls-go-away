@@ -5,3 +5,7 @@
     align-items: center;     /* center items horizontally, in this case */
     min-height: 30em;
 }
+
+.name-form {
+    margin-bottom: 6px;
+}

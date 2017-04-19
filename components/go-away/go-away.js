@@ -16,7 +16,7 @@ function GoAwayCtrl($stateParams, $interval) {
         self.name = self.formatName($stateParams.name);
         $interval(function() {
             self.ctr++;
-            if (!self.goText && self.ctr > 13) {
+            if (!self.goText && self.ctr > 16) {
                 self.startGoAway();
             }
         }, 1000);
@@ -26,7 +26,7 @@ function GoAwayCtrl($stateParams, $interval) {
         self.goText = 'G';
         $interval(function() {
             self.goText = self.goText + 'o';
-        }, 50);
+        }, 40);
     }
 
     self.formatName = function(name) {
